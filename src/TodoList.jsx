@@ -94,7 +94,7 @@ export default function TodoList() {
               </>
             ) : (
               <>
-                <span>{t.text}</span>
+                <span className="task-text">{t.text}</span>
                 <button onClick={() => startEditing(index)}>✏️ Edit</button>
                 <button onClick={() => removeTask(index)}>❌ Delete</button>
               </>
