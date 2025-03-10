@@ -5,23 +5,35 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #f8f9fa;
- }
- .app-container {
+}
+.app-container {
   text-align: center;
   background: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
- }
- .todo-container {
+}
+.todo-container {
   margin-top: 20px;
- }
- input {
+}
+input {
   padding: 8px;
   margin-right: 10px;
- }
- button {
+}
+button {
   padding: 8px;
   cursor: pointer;
- }
- 
+}
+body.dark-mode {
+  background-color: #222;
+  color: white;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.container button {
+  margin: 5px;
+}
