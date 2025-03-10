@@ -29,6 +29,12 @@ body.dark-mode {
   color: white;
 }
 
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: green; 
+}
+
 .completed {
   text-decoration: line-through;
   color: gray;

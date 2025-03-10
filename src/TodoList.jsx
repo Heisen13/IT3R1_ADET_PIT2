@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./App.css"; // Ensure this contains styles for dark mode
+import "./App.css";
 
 export default function TodoList() {
   const [tasks, setTasks] = useState([]);
@@ -78,6 +78,7 @@ export default function TodoList() {
           <li key={index} className={t.completed ? "completed" : ""}>
             <input
               type="checkbox"
+              className="custom-checkbox"
               checked={t.completed}
               onChange={() => toggleComplete(index)}
             />
