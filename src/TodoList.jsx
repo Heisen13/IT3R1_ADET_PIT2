@@ -39,6 +39,7 @@ export default function TodoList() {
   };
 
   const saveEdit = (index, newText) => {
+    if (newText.trim() === "") return;
     setTasks(
       tasks.map((t, i) =>
         i === index ? { ...t, text: newText, editing: false } : t
@@ -75,22 +76,26 @@ export default function TodoList() {
       <ul>
         {getFilteredTasks().map((t, index) => (
           <li key={index} className={t.completed ? "completed" : ""}>
+            <input
+              type="checkbox"
+              checked={t.completed}
+              onChange={() => toggleComplete(index)}
+            />
             {t.editing ? (
-              <input
-                type="text"
-                defaultValue={t.text}
-                onBlur={(e) => saveEdit(index, e.target.value)}
-                autoFocus
-              />
-            ) : (
               <>
                 <input
-                  type="checkbox"
-                  checked={t.completed}
-                  onChange={() => toggleComplete(index)}
+                  type="text"
+                  defaultValue={t.text}
+                  onBlur={(e) => saveEdit(index, e.target.value)}
+                  autoFocus
                 />
-                <span onClick={() => startEditing(index)}>{t.text}</span>
-                <button onClick={() => removeTask(index)}>❌</button>
+                <button onClick={() => saveEdit(index, t.text)}>💾 Save</button>
+              </>
+            ) : (
+              <>
+                <span>{t.text}</span>
+                <button onClick={() => startEditing(index)}>✏️ Edit</button>
+                <button onClick={() => removeTask(index)}>❌ Delete</button>
               </>
             )}
           </li>
