@@ -59,13 +59,16 @@ export default function TodoList() {
       <button onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
       </button>
-      <input
-        type="text"
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
-        placeholder="Add a new task"
-      />
-      <button onClick={addTask}>Add Task</button>
+
+      <div className="task-input-container">
+        <input
+          type="text"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+          placeholder="Add a new task"
+        />
+        <button onClick={addTask}>Add Task</button>
+      </div>
 
       <div>
         <button onClick={() => setFilter("all")}>All</button>
